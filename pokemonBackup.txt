@@ -1,3 +1,5 @@
+In case if data in pokemon.txt accidently got deleted.
+
 Zacian#888#Fairy#Steel#Warrior Pokemon#2.8#110.0#Intrepid Sword
 Toxtricity#849#Electric#Ground#Punk Pokemon#1.2#40.0#Punk Rock
 Beldum#374#Steel#Ground#Iron Ball Pokemon#0.6#95.2#Clear Body
