@@ -97,13 +97,14 @@ void removeID(int id) {
     fclose(fp2);
     remove("pokemon.txt");
     rename("temp.txt", "pokemon.txt");
+    printf("Pokemon removed"); getchar();
 }
 void printPokemon(Pokemon *pokemons, int count) {
-    printf("+-------+----------------------+----------+-----------------+---------------------+--------+--------+----------------------------+\n");
-    printf("| ID    |Name                  | Type     | Weakness        | Species             | Height | Weight | Abilities                  |\n");
-    printf("+-------+----------------------+----------+-----------------+---------------------+--------+--------+----------------------------+\n");
+    printf("+-------+----------------------+----------+-----------------+-----------------------+--------+--------+----------------------------+\n");
+    printf("| ID    |Name                  | Type     | Weakness        | Species               | Height | Weight | Abilities                  |\n");
+    printf("+-------+----------------------+----------+-----------------+-----------------------+--------+--------+----------------------------+\n");
     for (int i = 0; i < count; i++) {
-        printf("| #%04d | %-20s | %-8s | %-15s |%-21s | %-6.1f | %-6.1f | %-26s |\n",
+        printf("| #%04d | %-20s | %-8s | %-15s | %-21s | %-6.1f | %-6.1f | %-26s |\n",
                pokemons[i].pokeID,
                pokemons[i].name,
                pokemons[i].type,
@@ -113,7 +114,7 @@ void printPokemon(Pokemon *pokemons, int count) {
                pokemons[i].weight,
                pokemons[i].abilites);
     }
-    printf("+-------+----------------------+----------+-----------------+---------------------+--------+--------+----------------------------+\n");
+    printf("+-------+----------------------+----------+-----------------+-----------------------+--------+--------+----------------------------+\n");
 }
 
 
@@ -167,10 +168,10 @@ void writePokemon(){
     int t = 0;
     int verified = 0;
  do {
-        printf("Insert Pokemon's name (Pokemon name must be at least 3 characters): ");
+        printf("Insert Pokemon's name (Pokemon name must be at least 3 characters, type \"exit\" to exit): ");
         scanf("%[^\n]", pokemonName); getchar();
         int hasNumber = 0;
-
+        if(strcasecmp(pokemonName, "exit") == 0) return;
         for (int i = 0; i < strlen(pokemonName); i++) {
             if (pokemonName[i] >= '0' && pokemonName[i] <= '9') {
                 hasNumber = 1;
@@ -344,11 +345,9 @@ void pokemonList() {
     }
     fclose(fp);
     size = c;
-    printf("%d", c); getchar();
 }
 
 int main() {
-    pokemonList();
     int choice;
     do {
         clearScreen();
@@ -367,6 +366,7 @@ int main() {
         }while(t == 1);
         switch (choice) {
             case 1:
+            pokemonList();
             int select;
             do {
                 clearScreen();
@@ -393,9 +393,10 @@ int main() {
                         int found = 0; 
                         int size2 = 0; 
 
-                        printf("Insert what element type of Pokémon: ");
+                        printf("Insert what element type of Pokémon(type \"exit\" for exit): ");
                         scanf("%s", element);
                         getchar();
+                        if(strcasecmp(element, "exit") == 0) break;
                         clearScreen();
 
                         for (int i = 0; i < size; i++) {
@@ -448,7 +449,7 @@ int main() {
                         int t = 0;
                         do{
                             clearScreen();
-                            puts("Insert and ID(type \"exit\" for exit): ");
+                            puts("Insert an ID(type \"exit\" for exit): ");
                             printf(">>");
                             scanf("%s", select3); getchar();
                             if (strcasecmp(select3, "exit") == 0) break;
