@@ -84,6 +84,14 @@ void removeID(int id) {
     FILE *fp = fopen("pokemon.txt", "r");
     FILE *fp2 = fopen("temp.txt", "a");
     Pokemon p[MAX];
+    if (fp == NULL){
+        printf("File not found"); getchar();
+        return;
+    } 
+    else if(fp2 == NULL) {
+        printf("File not found"); getchar();
+        return;
+    }
     int c = 0;
     while(fscanf(fp, "%[^#]#%d#%[^#]#%[^#]#%[^#]#%f#%f#%[^\n]\n", p[c].name, &p[c].pokeID, p[c].type, p[c].weakness, p[c].species, &p[c].height, &p[c].weight, p[c].abilites) != EOF) {
         c++;
@@ -157,6 +165,10 @@ int validateSpecies(const char* species){
 }
 void writePokemon(){
     FILE *fp = fopen("pokemon.txt", "a");
+    if(fp == NULL){
+        printf("File not foung"); getchar();
+        return;
+    }
     char pokemonName[51];
     int pokemonID;
     char pokemonType[20];
@@ -339,6 +351,10 @@ void writePokemon(){
 
 void pokemonList() {
     FILE *fp = fopen("pokemon.txt", "r");
+    if (fp == NULL) {
+        printf("File not found");
+        return;
+    }
     int c = 0;
     while (fscanf(fp, "%[^#]#%d#%[^#]#%[^#]#%[^#]#%f#%f#%[^\n]\n", poke[c].name, &poke[c].pokeID, poke[c].type, poke[c].weakness, poke[c].species, &poke[c].height, &poke[c].weight, poke[c].abilites) != EOF) {
         c++;
