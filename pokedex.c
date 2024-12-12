@@ -105,7 +105,7 @@ void removeID(int id) {
     fclose(fp2);
     remove("pokemon.txt");
     rename("temp.txt", "pokemon.txt");
-    printf("Pokemon removed"); getchar();
+    
 }
 void printPokemon(Pokemon *pokemons, int count) {
     printf("+-------+----------------------+----------+-----------------+-----------------------+--------+--------+----------------------------+\n");
@@ -475,7 +475,10 @@ int main() {
                                 t = 1;
                             }
                             else{
-                                if(equalID(id) == 0) removeID(id);
+                                if(equalID(id) == 0) {
+                                removeID(id);
+                                printf("Pokemon removed"); getchar();
+                                }
                                 else{
                                     printf("ID not found"); getchar();
                                     t = 1;
