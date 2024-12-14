@@ -99,6 +99,6 @@ Stantler#234#Normal#Fighting#Deer Pokemon#1.4#71.2#Intimidate
 Chimecho#358#Psychic#Ghost#Wind Chime Pokemon#0.6#1.0#Levitate
 Chikorita#152#Grass#Fire#Leaf Pokemon#0.9#6.4#Overgrow
 Turtwig#387#Grass#Fire#Tiny Leaf Pokemon#0.4#10.2#Overgrow
-Charmander#4#Fire#Water#Lizard Pokemon#0.6#8.5#Blaze
+Gardevoir#282#Psychic#Poison#Embrace Pokemon#1.6#48.4#Synchronize
 aaa#123#Water#Grass#huhuhaha Pokemon#1.2#3.4#nyakar
 aab#124#Fighting#Fairy#gtau Pokemon#2.3#4.5#Ngerizz
